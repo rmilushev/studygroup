@@ -3,8 +3,8 @@ use Mix.Config
 # Configure your database
 config :studygroup, Studygroup.Repo,
   username: "postgres",
-  password: "postgres",
-  database: "studygroup_dev",
+  password: "123",
+  database: "studygroup",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
