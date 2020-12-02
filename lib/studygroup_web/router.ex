@@ -3,6 +3,8 @@ defmodule StudygroupWeb.Router do
 
   import StudygroupWeb.UserAuth
 
+  resources "/groups", GroupsController
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -66,6 +68,7 @@ defmodule StudygroupWeb.Router do
     put "/users/settings/update_password", UserSettingsController, :update_password
     put "/users/settings/update_email", UserSettingsController, :update_email
     get "/users/settings/confirm_email/:token", UserSettingsController, :confirm_email
+    put "/groups", GroupsController, :create
   end
 
   scope "/", StudygroupWeb do
