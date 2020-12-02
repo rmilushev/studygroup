@@ -5,7 +5,7 @@ defmodule Studygroup.Students.Student do
   schema "student" do
     field :age, :integer
     field :description, :string
-    field :email, :integer
+    field :email, :string
     field :name, :string
 
     timestamps()
