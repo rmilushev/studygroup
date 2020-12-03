@@ -21,8 +21,10 @@
             <%= link "Study books", to: Routes.page_path(@conn, :index), class: "btn btn-sm btn-link" %>
             <%= link "Study screencasts", to: Routes.page_path(@conn, :index), class: "btn btn-sm btn-link" %>
             <%= link "Study blogs", to: Routes.page_path(@conn, :index), class: "btn btn-sm btn-link" %>
+            <%= link "Groups", to: Routes.page_path(@conn, :index), class: "btn btn-sm btn-link" %>
+            <%= link "Students", to: Routes.page_path(@conn, :index), class: "btn btn-sm btn-link" %>
             <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home), class: "btn btn-sm btn-link" %>
+              <!-- <%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home), class: "btn btn-sm btn-link" %>-->
             <% end %>
           </div>
           <%= render "_user_menu.html", assigns %>
@@ -67,7 +69,7 @@
               </button>
               <%= link "Home", to: Routes.page_path(@conn, :index), class: "btn btn-link w-full" %>
               <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-                <%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home), class: "btn btn-link w-full" %>
+                <!--<%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home), class: "btn btn-link w-full" %>-->
               <% end %>
             </div>
           </div>
