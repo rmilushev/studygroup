@@ -3,6 +3,7 @@ defmodule StudygroupWeb.Router do
 
   import StudygroupWeb.UserAuth
 
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -49,10 +50,10 @@ defmodule StudygroupWeb.Router do
   scope "/", StudygroupWeb do
     pipe_through [:browser, :redirect_if_user_is_authenticated, :put_session_layout]
 
-    get "/users/register", UserRegistrationController, :new
-    post "/users/register", UserRegistrationController, :create
-    get "/users/log_in", UserSessionController, :new
-    post "/users/log_in", UserSessionController, :create
+    get "/users/login", UserRegistrationController, :new
+    post "/users/login", UserRegistrationController, :create
+    get "/users/register", UserSessionController, :new
+    post "/users/register", UserSessionController, :create
     get "/users/reset_password", UserResetPasswordController, :new
     post "/users/reset_password", UserResetPasswordController, :create
     get "/users/reset_password/:token", UserResetPasswordController, :edit
@@ -67,6 +68,7 @@ defmodule StudygroupWeb.Router do
     put "/users/settings/update_email", UserSettingsController, :update_email
     get "/users/settings/confirm_email/:token", UserSettingsController, :confirm_email
     resources "/students", StudentController
+    resources "/groups", GroupController
   end
 
   scope "/", StudygroupWeb do
