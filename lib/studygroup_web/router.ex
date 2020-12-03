@@ -3,7 +3,6 @@ defmodule StudygroupWeb.Router do
 
   import StudygroupWeb.UserAuth
 
-  resources "/groups", GroupController
 
   pipeline :browser do
     plug :accepts, ["html"]
